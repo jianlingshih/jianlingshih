@@ -1,0 +1,13 @@
+﻿<div class="header w">
+	<div class="logo">
+		<img src="img/logo.png" alt="ACCP教程网论坛" />
+	</div>
+	<div class="menu w">
+		<%if(session.getAttribute("users")!=null) { User
+		user=(User)session.getAttribute("users"); %> <span>您好！<%=user.getUName()
+			%> | <a href="admin/out.jsp">登出</a>
+		</span> <% }else{%> <span>您未<a href="login.jsp">登陆</a> | <a
+			href="reg.jsp">注册</a></span> <%} %>
+	</div>
+</div>
+<!--header end-->
