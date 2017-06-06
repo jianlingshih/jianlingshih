@@ -1,0 +1,52 @@
+-- CREATE TABLE T_Person(FName VARCHAR(20),FAge INT,FRemark VARCHAR(20),PRIMARY KEY(FName));
+-- CREATE TABLE T_Debt(FNumber VARCHAR(20),FAmount DECIMAL(10,2) NOT NULL,FPerson VARCHAR(20),PRIMARY KEY(FNumber),FOREIGN KEY(FPerson) REFERENCES T_Person(FName));
+-- INSERT INTO T_Person(FName,FAge,FRemark) VALUES('XiaoWang',17,'China')
+-- INSERT INTO T_Person(FAge,FName,FRemark) VALUES(21,'Kimisushi','Korea')
+-- INSERT INTO T_Person(FAge,FName) VALUES(22,'LXF')
+-- INSERT INTO T_Debt (FNumber,FAmount, FPerson) VALUES ('1',200, 'Jim')
+-- INSERT INTO T_Debt (FNumber,FAmount, FPerson) VALUES ('3',100, 'Jerry')-- person字段是指向T_Person表FName的外键 故 产生冲突
+-- SELECT * FROM T_Person
+-- SELECT * FROM T_Debt
+
+-- ###############################employeeTest################################################
+-- CREATE TABLE T_Employee (FNumber VARCHAR(20),FName VARCHAR(20),FAge INT,FSalary DECIMAL(10,2),PRIMARY KEY (FNumber))
+-- SELECT * FROM T_Employee WHERE FAGE>23 ORDER BY FAGE DESC ,FSALARY DESC 
+-- SELECT FAGE,AVG(FSALARY) FROM T_Employee GROUP BY FAGE
+-- SELECT FAGE,COUNT(*) as countofthisage FROM T_Employee GROUP BY fage having count(*)>=2 -- 聚合函数不能在where中实现 可用having替代
+-- SELECT * FROM T_Employee  ORDER BY FSALARY DESC limit 0,5  -- limit233
+/* SELECT FBirthDay,
+DATE_ADD(FBirthDay,INTERVAL 1 WEEK) as w1,
+DATE_ADD(FBirthDay,INTERVAL 2 MONTH) as m2,
+DATE_ADD(FBirthDay,INTERVAL 5 QUARTER) as q5
+FROM T_Person
+
+SELECT FBirthDay,
+DATE_ADD(FBirthDay,INTERVAL '3 2:10' DAY_MINUTE) as dm,
+DATE_ADD(FBirthDay,INTERVAL '1-6' YEAR_MONTH) as ym
+FROM T_Person
+
+SELECT
+FBirthDay,
+DATE_FORMAT(FBirthDay,'%y-%M %D %W') AS bd,
+FRegDay,
+DATE_FORMAT(FRegDay,'%Y年%m月%e日') AS rd
+FROM T_Person
+
+SELECT
+FBirthDay,
+DATE_FORMAT(FBirthDay,'%Y') AS y,
+DATE_FORMAT(FBirthDay,'%j') AS d,
+DATE_FORMAT(FBirthDay,'%U') AS u
+FROM T_Person*/
+
+SELECT
+FName,
+(CASE FName
+WHEN 'Tom' THEN 'GoodBoy'
+WHEN 'Lily' THEN 'GoodGirl'
+WHEN 'Sam' THEN 'BadBoy'
+WHEN 'Kerry' THEN 'BadGirl'
+ELSE 'Normal'
+END) as isgood
+FROM T_Person
+
