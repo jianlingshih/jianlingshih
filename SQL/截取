@@ -1,0 +1,16 @@
+function getPostRowNodes(xml) {
+	var tmp=new Array();
+	var bpos=0;
+	var epos=0;
+	while(true){
+		bpos=xml.indexOf('class="floor">',epos);
+		if(bpos<0){
+		  break;	
+		}
+		epos=xml.indexOf('</div><div class="clearfix"></div></div>',bpos);	
+		if(epos<0){
+		  break;	
+		}
+		tmp.push(xml.substring(bpos,epos));	
+	}
+	return tmp;
