@@ -66,6 +66,10 @@ setWebCharset('utf-8');
 
 
 xml=hexToDec(toString(xml).replace(/\\\"/g,'"').replace(/\\\//g,'/'))
+function hexToDec(str) {
+    str=str.replace(/\\/g,"%");
+    return unescape(str);
+}
 unescape(str)
 
     var tmps=new Array();

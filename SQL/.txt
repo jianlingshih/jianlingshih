@@ -1,0 +1,90 @@
+		for(var i=nodes.length()-1;i >= 0; --i){
+			if(/qq.com.*.html/.exec(nodes[i].AW)==null)	{
+				delete nodes[i];
+			}
+		}
+
+var rowNodes = xml..UL.(@ID=="thread_list")..LI.(/j_thread_list clearfix/.test(@CLASS)); 
+
+titleNode = rowNode..DIV.(@CLASS == "t_con cleafix")..DIV.(/threadlist_title/.test(@CLASS)).A;
+
+	var bpos=toString(rowNode).indexOf('<div class="threadlist_title');
+	   
+        var epos=toString(rowNode).indexOf('</div>',bpos);
+	   
+         return toString(rowNode.substring(bpos,epos)).replace(/<[^>]+>/g,'');
+
+
+var epos=rowNode.indexOf('<a href="',bpos);
+	
+var eepos=rowNode.indexOf('" title',epos);
+	
+return 'http://tieba.baidu.com'+rowNode.substring(epos+9,eepos);
+!isInvalidObject(rowNodes[i]..IMG.(@ALT == "置顶"))
+html2text(rowNodes[i].div.(@CLASS=="threadlist_rep_num").a)=="推广"
+
+html2text(node.@HREF)
+
+/(\d+) 个回复/.exec(toString(node))[1]
+
+try{
+		return posterURLRegex.exec(parseUrl)[1];
+	} catch (err) {
+		err.message = "Can not parse PosterID.";
+		saveFailedMsg(err);
+	}
+
+if(posterUrl==null || posterUrl[1]==null){
+		throw "Can not parse posterId";
+	}
+
+
+ "321/123".split('/')[1]
+
+
+ if(/tid\=(\d+)\&authorid/.test(theLastScrapePageURL))
+
+
+
+    var url = 'http://search.cctv.com/ifsearch.php?qtext='+encodeURI(keyword)+'&type=video&page=1&sort=UPLOADDATE';
+	setWebCharset("utf-8");
+	setXmlCharset("utf-8");
+	var xml = loadPage(url);
+	
+waitLoadPage();
+
+
+downloader.setClientType(1);
+
+loadPage(buildFullURL("http://www.guokr.com"+html2text(pageNode.@HREF)));
+
+addInvalidTagReplacePair("div", "DIV");
+addInvalidTagReplacePair("tbody", "TBODY");
+addInvalidTagReplacePair("tr", "TR");
+
+setWebCharset('utf-8');
+
+
+xml=hexToDec(toString(xml).replace(/\\\"/g,'"').replace(/\\\//g,'/'))
+function hexToDec(str) {
+    str=str.replace(/\\/g,"%");
+    return unescape(str);
+}
+unescape(str)
+
+    var tmps=new Array();
+    for(var i=0;i<rowNodes.length();i++){
+    	if(isInvalidObject(rowNodes[i]..A.(@CLASS == "open_view"))){
+    		continue;
+    	}else{
+  		tmps.push(rowNodes[i]);
+    		}   	
+    	}
+	return tmps;	
+
+
+var url = "http://bbs.wdzj.com/thread/ajaxComment";
+		addPostData("tid",theThreadID)
+		addPostData("type","2")
+		addPostData("page","1")
+		var xml=loadPageByPost(url);
